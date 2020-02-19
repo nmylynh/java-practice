@@ -21,10 +21,19 @@ class HashMapAwesomeness {
         fun.remove("helloKittyFan21");
 
         // get keys and values:
+        // keys:
         System.out.println(fun.containsKey("coolguyswag"));
         // outputs true
 
+        // values:
         System.out.println(fun.containsValue("password123"));
         // outputs true
+
+        // prints out hashmap
+        System.out.println(fun);
+        // prints out keys
+        System.out.println(fun.keySet());
+        // prints out values
+        System.out.println(fun.values());
     }
 }
