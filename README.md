@@ -1,11 +1,15 @@
+**Java TOC**
 - [Compilation: Creating Executables](#compilation-creating-executables)
 - [Java Interview Questions](#java-interview-questions)
-- [Java Classes](#java-classes)
+- [Classes](#classes)
   - [Classes: Constructors](#classes-constructors)
   - [Classes: Instance Fields](#classes-instance-fields)
   - [Classes: Constructor Parameters](#classes-constructor-parameters)
   - [Classes: Assigning Values to Instance Fields](#classes-assigning-values-to-instance-fields)
   - [Classes: Multiple Fields](#classes-multiple-fields)
+  - [Classes: Review](#classes-review)
+- [Methods](#methods)
+  - [Introduction](#introduction)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -65,7 +69,7 @@ The following is printed to the screen:
 2. Where you used Synchronized and how it works?
    1. Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource with multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a synchronized method which requires the same lock simultaneously or concurrently.
 
-# Java Classes
+# Classes
 
 ## Classes: Constructors
 We create objects (instances of a class) using a constructor method. The constructor is defined within the class.
@@ -344,4 +348,138 @@ Car honda = new Car("green", false, 0);
 
 // values do not match types, error!
 Car junker = new Car(true, 42, "brown");
+```
+
+Another example:
+
+```java
+
+public class Store {
+  // instance fields
+  String productType;
+  int inventoryCount;
+  double inventoryPrice;
+  
+  // constructor method
+  public Store(String product, int count, double price) {
+    productType = product;
+    inventoryCount = count;
+    inventoryPrice = price;
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store cookieShop = new Store("cookies", 12, 3.75);
+  }
+}
+```
+
+## Classes: Review
+
+Java is an object-oriented programming language where every program has at least one class. Programs are often built from many classes and objects, which are the instances of a class.
+
+Classes define the state and behavior of their instances. Behavior comes from methods defined in the class. State comes from instance fields declared inside the class.
+
+Classes are modeled on the real-world things we want to represent in our program. Later we will explore how a program can be made from multiple classes. For now, our programs are a single class.
+
+```java
+public class Dog {
+  // instance field
+  String breed;
+  // constructor method
+  public Dog(String dogBreed) {
+    /* 
+    value of parameter dogBreed 
+    assigned to instance field breed
+    */
+    breed = dogBreed;
+  }
+  public static void main(String[] args) {
+    /* 
+    create instance: 
+    use 'new' operator and invoke constructor
+    */
+    Dog fido = new Dog("poodle");
+    /* 
+    fields are accessed using: 
+    the instance name, `.` operator, and the field name.
+    */
+    fido.breed;
+    // "poodle"
+  }
+}
+
+```
+
+# Methods
+
+## Introduction
+In the last lesson, we created an instance of the Store class in the main method. We learned that objects have state and behavior:
+
+A diagram of a software object with fields and behavior
+We have seen how to give objects state through instance fields. Now, we’re going to learn about behavior. Remember our example of a Savings Account.
+
+A savings account should know:
+- The balance of money available
+
+It should be able to perform:
+1. Depositing
+   1. Increasing the amount available
+2. Withdrawing
+   1. Decreasing the amount available
+3. Checking the balance
+   1. Displaying the amount available.
+   2. 
+You have defined and called constructor methods, which create an instance of a class. You have also defined main methods, which are the tasks that execute when the program is run. These are specific examples of methods. We can also define our own that will take input, do something with it, and return the kind of output we want.
+
+`makeSandwich()` adds ingredients together to make a sandwich.
+
+What if it took 20 lines of code to make a sandwich? Our program would become very long very quickly if we were making multiple sandwiches. Methods are powerful because they allow us to create blocks of code that are repeatable and modular.
+
+```java
+
+public class SavingsAccount {
+  
+  int balance;
+  
+  public SavingsAccount(int initialBalance){
+    balance = initialBalance;
+  }
+  
+  public static void main(String[] args){
+    SavingsAccount savings = new SavingsAccount(2000);
+    
+    //Check balance:
+    System.out.println("Hello!");
+    System.out.println("Your balance is "+savings.balance);
+    
+    //Withdrawing:
+    int afterWithdraw = savings.balance - 300;
+    savings.balance = afterWithdraw;
+    System.out.println("You just withdrew "+300);
+    
+    //Check balance:
+    System.out.println("Hello!");
+    System.out.println("Your balance is "+savings.balance);
+    
+    //Deposit:
+    int afterDeposit = savings.balance + 600;
+    savings.balance = afterDeposit;
+    System.out.println("You just deposited "+600);
+    
+    //Check balance:
+    System.out.println("Hello!");
+    System.out.println("Your balance is "+savings.balance);
+    
+    //Deposit:
+    int afterDeposit2 = savings.balance + 600;
+    savings.balance = afterDeposit2;
+    System.out.println("You just deposited "+600);
+    
+    //Check balance:
+    System.out.println("Hello!");
+    System.out.println("Your balance is "+savings.balance);
+    
+  }       
+}
 ```
