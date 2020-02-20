@@ -51,3 +51,55 @@ public class Welcome {
 
 2. Where you used Synchronized and how it works?
    1. Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource with multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a synchronized method which requires the same lock simultaneously or concurrently.
+
+# Java Classes
+
+## Classes: Constructors
+We create objects (instances of a class) using a constructor method. The constructor is defined within the class.
+
+### Here’s the Car class with a constructor:
+
+```java
+public class Car {
+  public Car() {
+  //constructor method starts after curly brace
+
+    //instructions for creating a Car instance
+
+  }
+  //constructor method ends after curly brace
+
+  public static void main(String[] args) {
+
+    // program tasks
+
+  }
+}
+```
+
+The constructor, `Car()`, shares a name with the class.
+
+We create instances by calling or invoking the constructor within `main()`. This example assigns an instance to the variable ferrari:
+
+```java
+public class Car {
+
+  public Car() {
+  }
+
+  public static void main(String[] args) {
+    /*
+    invoke a constructor using 
+    'new', the name, and parentheses:
+    new Car()
+    */
+    Car ferrari = new Car(); 
+  }
+}
+```
+As with other variable declarations, we specify the type: Car, and name: ferrari. Variables that reference an instance have a type of the class name.
+
+We invoke the constructor method: `Car()`, and use the keyword new to indicate that we’re creating an instance. Omitting new causes an error.
+
+This is the first time we’ve called a method that we’ve also defined. `main()` is run automatically and we did not define the `println()` method.
+
