@@ -42,3 +42,10 @@ public class Welcome {
 >The following is printed to the screen:
 
     Welcome to Codecademy's Java course!
+
+
+
+# Java Interview Questions
+Why encapsulation used ?
+Where you used encapsulation?
+Where you used Synchronized and how it works?
