@@ -46,6 +46,8 @@ public class Welcome {
 
 
 # Java Interview Questions
-Why encapsulation used ?
-Where you used encapsulation?
-Where you used Synchronized and how it works?
+1. Why encapsulation used ? Where you used encapsulation?
+   1. Everything is an abstraction. Encapsulation is the process of hiding information details and protecting data and behavior of an object from misuse by other objects. In Java, encapsulation is done using access modifiers (public, protected, private) with classes, interfaces, setters, getters.
+
+2. Where you used Synchronized and how it works?
+   1. Synchronized keyword in Java is used to provide mutually exclusive access to a shared resource with multiple threads in Java. Synchronization in Java guarantees that no two threads can execute a synchronized method which requires the same lock simultaneously or concurrently.
