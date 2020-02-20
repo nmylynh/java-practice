@@ -141,3 +141,194 @@ I am inside the constructor method.
 Store@2aae9190
 
 ```
+
+# Classes: Instance Fields
+
+Our last exercise ended with printing an instance of Store, which looked something like `Store@6bc7c054`. The first part, `Store`, refers to the class, and the second part `@6bc7c054` refers to the instance’s location in the computer’s memory.
+
+We don’t care about memory location, but our instances have no other characteristics!
+
+We’ll add associated data to an object by introducing instance variables, or instance fields. Instance fields are the state in our objects.
+
+We want `Car` instances of different colors, so we declare a String color instance field.
+
+```java
+public class Car {
+  /*
+  declare fields inside the class
+  by specifying the type and name
+  */
+  String color;
+
+  public Car() {
+    /* 
+    instance fields available in
+    scope of constructor method
+    */
+  }
+
+  public static void main(String[] args) {
+    // body of main method
+  }
+}
+```
+The declaration is within the class and the instance variable will be available for assignment inside the constructor.
+
+Fields are a type of state each instance will possess. One instance may have "red" as its color, another "blue", etc. We’ll learn how to assign values in the next exercise.
+
+
+# Classes: Constructor Parameters
+We’ll use a combination of constructor method and instance field to create instances with individual state.
+
+We need to alter the constructor method because now it needs to access data we’re assigning to the instance.
+
+Our Car constructor now has a parameter: `String carColor.`
+
+```java
+
+public class Car {
+  String color;
+
+  // constructor method with a parameter
+  public Car(String carColor) {
+    // parameter value assigned to the field
+    color = carColor;
+  }
+  public static void main(String[] args) {
+    // program tasks
+  }
+}
+
+```
+
+We need a value for the instance field color, so we’ve added `String carColor` as a parameter.
+
+Parameters specify the type and name of data available for reference within a method’s scope.
+
+We’ve already seen a parameter in the `main()` method: `String[] args`, but this is the first time we’re using the parameter value within a method body.
+
+The parameter `carColor` references the value passed in during a method call:
+
+```java
+new Car("blue");
+// carColor references "blue" inside constructor
+new Car("yellow");
+// carColor references "yellow" inside constructor
+```
+
+Within the constructor, we assign the parameter value to the instance field.
+
+Instance fields are available for assignment inside the constructor because we declared them within the class.
+
+# Classes: Assigning Values to Instance Fields
+
+Now that our constructor has a parameter, we must pass values into the method call. These values become the state of the instance.
+
+Here we create an instance, ferrari, in the `main()` method with "red" as its color field:
+
+```java
+public class Car {
+  String color;
+
+  public Car(String carColor) {
+    // assign parameter value to instance field
+    color = carColor;
+  }
+
+  public static void main(String[] args) {
+    // parameter value supplied when calling constructor
+    Car ferrari = new Car("red");
+  }
+}
+```
+
+We pass the String value "red" to our constructor method call: `new Car("red");`.
+
+The type of the value given to the invocation must match the type declared by the parameter.
+
+Inside the constructor, the parameter `carColor` refers to the value passed in during the invocation: "red". This value is assigned to the instance field color.
+
+`color` has already been declared, so we don’t specify the type during assignment.
+
+The object, ferrari, holds the state of color as an instance field referencing the value "red".
+
+We access the value of this field with the dot operator (.):
+
+```java
+/*
+accessing a field:
+objectName.fieldName
+*/
+
+ferrari.color;
+// "red"
+```
+Another example with the store class:
+
+```java
+public class Store {
+  // instance fields
+  String productType;
+  
+  // constructor method
+  public Store(String product) {
+    productType = product;
+  }
+  
+  // main method
+  public static void main(String[] args) {
+    Store lemonadeStand = new Store("lemonade"); 
+    
+    System.out.println(lemonadeStand.productType);
+    
+  }
+}
+```
+
+# Classes: Multiple Fields
+
+Objects are not limited to a single instance field. We can declare as many fields as are necessary for the requirements of our program.
+
+Let’s change `Car` instances so they have multiple fields.
+
+We’ll add a boolean is`Running, that indicates the car engine is on and an `int velocity`, that indicates the speed at which the car is traveling.
+
+```java
+public class Car {
+  String color;
+  // new fields!
+  boolean isRunning;
+  int velocity;
+
+  // new parameters that correspond to the new fields
+  public Car(String carColor, boolean carRunning, int milesPerHour) {
+    color = carColor;
+    // assign new parameters to the new fields
+    isRunning = carRunning;
+    velocity = milesPerHour;
+  }
+
+  public static void main(String[] args) {
+    // new values passed into the method call
+    Car ferrari = new Car("red", true, 27);
+    Car renault = new Car("blue", false, 70);
+
+    System.out.println(renault.isRunning);
+    // false
+    System.out.println(ferrari.velocity);
+    // 27
+  }
+}
+```
+
+The constructor now has multiple parameters to receive values for the new fields. We still specify the type as well as the name for each parameter.
+
+Ordering matters! We must pass values into the constructor invocation in the same order that they’re listed in the parameters.
+
+```java
+// values match types, no error
+Car honda = new Car("green", false, 0);
+
+// values do not match types, error!
+Car junker = new Car(true, 42, "brown");
+```
