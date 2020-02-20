@@ -124,11 +124,20 @@ public class Store {
 }
 ```
 
->Inside main(), print lemonadeStand to see how Java represents this instance.
+Inside `main()`, print lemonadeStand to see how Java represents this instance.
 
->Review the order of the printed messages:
+Review the order of the printed messages:
 
->Running the program invokes main()
->We create an instance so we move from main() to Store()
->The code inside Store() runs
->When Store() finishes execution, we return to main()
+Running the program invokes `main()`
+We create an instance so we move from `main()` to `Store()`
+The code inside `Store()` runs
+When `Store()` finishes execution, we return to `main()`
+
+Overall, output is:
+
+```
+Start of the main method.
+I am inside the constructor method.
+Store@2aae9190
+
+```
