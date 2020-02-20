@@ -1,23 +1,20 @@
 - [Compilation: Creating Executables](#compilation-creating-executables)
-    - [Compilation helped us catch an error. Now that we’ve corrected the file, let’s walk through a successful compilation.](#compilation-helped-us-catch-an-error-now-that-weve-corrected-the-file-lets-walk-through-a-successful-compilation)
-    - [We run the executable with the command:](#we-run-the-executable-with-the-command)
-    - [Here’s a full compilation cycle as an example:](#heres-a-full-compilation-cycle-as-an-example)
-    - [We now have two files:](#we-now-have-two-files)
-    - [We can execute the compiled class with the command:](#we-can-execute-the-compiled-class-with-the-command)
 - [Java Interview Questions](#java-interview-questions)
 - [Java Classes](#java-classes)
   - [Classes: Constructors](#classes-constructors)
     - [Here’s the Car class with a constructor:](#heres-the-car-class-with-a-constructor)
-- [Classes: Instance Fields](#classes-instance-fields)
-- [Classes: Constructor Parameters](#classes-constructor-parameters)
-- [Classes: Assigning Values to Instance Fields](#classes-assigning-values-to-instance-fields)
-- [Classes: Multiple Fields](#classes-multiple-fields)
+  - [Classes: Instance Fields](#classes-instance-fields)
+  - [Classes: Constructor Parameters](#classes-constructor-parameters)
+  - [Classes: Assigning Values to Instance Fields](#classes-assigning-values-to-instance-fields)
+  - [Classes: Multiple Fields](#classes-multiple-fields)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
+
 # Compilation: Creating Executables
-### Compilation helped us catch an error. Now that we’ve corrected the file, let’s walk through a successful compilation.
+
+Compilation helped us catch an error. Now that we’ve corrected the file, let’s walk through a successful compilation.
 
 > As a reminder, we can compile a .java file from the terminal with the command:
 
@@ -26,13 +23,13 @@
 
 >If the file compiles successfully, this command produces an executable class: FileName.class. Executable means we can run this program from the terminal.
 
-### We run the executable with the command:
+We run the executable with the command:
 
     java Whales
 
 > Note that we leave off the .class part of the filename.
 
-### Here’s a full compilation cycle as an example:
+Here’s a full compilation cycle as an example:
 
 ```java
 // within the file: Welcome.java
@@ -48,12 +45,12 @@ public class Welcome {
 
 >The terminal shows no errors, which indicates a successful compilation.
 
-### We now have two files:
+We now have two files:
 
 1. Welcome.java, our original file with Java syntax.
 2. Welcome.class, our compiled file with Java bytecode, ready to be executed by the Java Virtual Machine.
    
-### We can execute the compiled class with the command:
+We can execute the compiled class with the command:
 
     java Welcome
 
@@ -160,7 +157,7 @@ Store@2aae9190
 
 ```
 
-# Classes: Instance Fields
+## Classes: Instance Fields
 
 Our last exercise ended with printing an instance of Store, which looked something like `Store@6bc7c054`. The first part, `Store`, refers to the class, and the second part `@6bc7c054` refers to the instance’s location in the computer’s memory.
 
@@ -195,7 +192,7 @@ The declaration is within the class and the instance variable will be available 
 Fields are a type of state each instance will possess. One instance may have "red" as its color, another "blue", etc. We’ll learn how to assign values in the next exercise.
 
 
-# Classes: Constructor Parameters
+## Classes: Constructor Parameters
 We’ll use a combination of constructor method and instance field to create instances with individual state.
 
 We need to alter the constructor method because now it needs to access data we’re assigning to the instance.
@@ -238,7 +235,7 @@ Within the constructor, we assign the parameter value to the instance field.
 
 Instance fields are available for assignment inside the constructor because we declared them within the class.
 
-# Classes: Assigning Values to Instance Fields
+## Classes: Assigning Values to Instance Fields
 
 Now that our constructor has a parameter, we must pass values into the method call. These values become the state of the instance.
 
@@ -303,7 +300,7 @@ public class Store {
 }
 ```
 
-# Classes: Multiple Fields
+## Classes: Multiple Fields
 
 Objects are not limited to a single instance field. We can declare as many fields as are necessary for the requirements of our program.
 
