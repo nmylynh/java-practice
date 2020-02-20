@@ -103,3 +103,32 @@ We invoke the constructor method: `Car()`, and use the keyword new to indicate t
 
 This is the first time we’ve called a method that we’ve also defined. `main()` is run automatically and we did not define the `println()` method.
 
+```java
+
+public class Store {
+  
+  // new method: constructor!
+  public Store() {
+      System.out.println("I am inside the constructor method.");
+  }
+  
+  // main method is where we create instances!
+  public static void main(String[] args) {
+    System.out.println("Start of the main method.");
+    
+    // create the instance below
+    Store lemonadeStand = new Store();
+    // print the instance below
+    System.out.println(lemonadeStand);
+  }
+}
+```
+
+>Inside main(), print lemonadeStand to see how Java represents this instance.
+
+>Review the order of the printed messages:
+
+>Running the program invokes main()
+>We create an instance so we move from main() to Store()
+>The code inside Store() runs
+>When Store() finishes execution, we return to main()
