@@ -2,14 +2,12 @@
 - [Java Interview Questions](#java-interview-questions)
 - [Java Classes](#java-classes)
   - [Classes: Constructors](#classes-constructors)
-    - [Here’s the Car class with a constructor:](#heres-the-car-class-with-a-constructor)
   - [Classes: Instance Fields](#classes-instance-fields)
   - [Classes: Constructor Parameters](#classes-constructor-parameters)
   - [Classes: Assigning Values to Instance Fields](#classes-assigning-values-to-instance-fields)
   - [Classes: Multiple Fields](#classes-multiple-fields)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 
 # Compilation: Creating Executables
@@ -72,7 +70,7 @@ We can execute the compiled class with the command:
 ## Classes: Constructors
 We create objects (instances of a class) using a constructor method. The constructor is defined within the class.
 
-### Here’s the Car class with a constructor:
+Here’s the Car class with a constructor:
 
 ```java
 public class Car {
